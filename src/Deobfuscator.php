@@ -1,3 +1,4 @@
+
 <?php
 
 /**
@@ -240,8 +241,9 @@ class Deobfuscator
      *
      * @return mixed
      */
-    private function calc($expr)
-    {
+     private function calc($expr, $level = 0)
+     {
+		if($level>100000) return "";
         if (is_array($expr)) {
             $expr = $expr[0];
         }
